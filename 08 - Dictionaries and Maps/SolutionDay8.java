@@ -1,31 +1,20 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class SolutionDay8 {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
+        int number = scan.nextInt();
 
-		Map<String, String> name2phone = new HashMap<String, String>();
+        System.out.println(factorial(number));
+    }
 
-		int n = sc.nextInt();
-		for (int i = 0; i < n; i++) {
-			String name = sc.next();
-			String phone = sc.next();
-
-			name2phone.put(name, phone);
-		}
-
-		while (sc.hasNext()) {
-			String name = sc.next();
-
-			if (name2phone.containsKey(name)) {
-				System.out.println(name + "=" + name2phone.get(name));
-			} else {
-				System.out.println("Not found");
-			}
-		}
-
-		sc.close();
-	}
+    public static int factorial(int number){
+        if(number == 0){
+            return 1;
+        }
+        else {
+            return number * factorial(number-1);
+        }
+    }
 }
