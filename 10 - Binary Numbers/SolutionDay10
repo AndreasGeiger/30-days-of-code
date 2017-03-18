@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+
+public class SolutionDay10 {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int number = scan.nextInt();
+        int result = 0;
+        int maximum = 0;
+
+        while(number > 0){
+            if(number%2 == 1){
+                result += 1;
+                if(result > maximum){
+                    maximum = result;
+                }
+            }
+            else {
+                result = 0;
+            }
+            number/= 2;
+        }
+        System.out.println(maximum);
+    }
+}
