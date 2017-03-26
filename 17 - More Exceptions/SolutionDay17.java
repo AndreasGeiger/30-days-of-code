@@ -7,7 +7,7 @@ class Calculator {
         else {
             return (int) Math.pow(n, p);
         }
-        
+
     }
 }
 
